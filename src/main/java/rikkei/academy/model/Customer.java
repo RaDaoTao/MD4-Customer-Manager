@@ -1,19 +1,24 @@
 package rikkei.academy.model;
 
 public class Customer {
-    private int id;
+    private int id ;
     private  String name;
     private  String email;
     private  String address;
-
+    private String phone;
+    private boolean sex;
+    private  int age;
     public Customer() {
     }
 
-    public Customer(int id, String name, String email, String address) {
+    public Customer(int id, String name, String email, String address, String phone, boolean sex, int age) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.address = address;
+        this.phone = phone;
+        this.sex = sex;
+        this.age = age;
     }
 
     public int getId() {
@@ -46,5 +51,29 @@ public class Customer {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public boolean isSex() {
+        return sex;
+    }
+
+    public void setSex(boolean sex) {
+        this.sex = sex;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }

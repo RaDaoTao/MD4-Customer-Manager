@@ -18,9 +18,6 @@ public class CustomerServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         customerService = new CustomerService();
-        customerService.save(new Customer(1, "Nguyễn Văn Khánh", "khanhsky@mom.com", "Hà Lội"));
-        customerService.save(new Customer(2, "Nguyễn Bình Gold", "binhgold@mom.com", "Lào Cai"));
-        customerService.save(new Customer(3, "Duy Nến", "duynen@mom.com", "Cao Bằng"));
     }
 
     @Override
@@ -111,14 +108,20 @@ public class CustomerServlet extends HttpServlet {
                     String name = request.getParameter("name");
                     String email = request.getParameter("email");
                     String address = request.getParameter("address");
-                    customerService.save(new Customer(id, name, email, address));
+                    String phone = request.getParameter("phone");
+                    boolean sex = Boolean.parseBoolean(request.getParameter("sex"));
+                    int age = Integer.parseInt(request.getParameter("age"));
+                    customerService.save(new Customer(id,name,email,address,phone,sex,age));
                     break;
                 case "ADD":
-                    int idNew = customerService.getNewId();
+
                     String nameNew = request.getParameter("name");
                     String emailNew = request.getParameter("email");
                     String addressNew = request.getParameter("address");
-                    customerService.save(new Customer(idNew, nameNew, emailNew, addressNew));
+                    String phoneNew = request.getParameter("phone");
+                    boolean sexNew = Boolean.parseBoolean(request.getParameter("sex"));
+                    int ageNew = Integer.parseInt(request.getParameter("age"));
+                    customerService.save(new Customer(0, nameNew, emailNew, addressNew,phoneNew,sexNew,ageNew));
                     break;
 
             }

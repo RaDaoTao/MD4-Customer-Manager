@@ -22,6 +22,14 @@
     <input type="text"  id="email" name="email" value="${customer.email}">
     <label for="address">Address</label>
     <input type="text"  id="address" name="address" value="${customer.address}">
+    <br>
+    <label for="phone">Phone</label>
+    <input type="text" id="phone" name="phone" value="${customer.phone}">
+    <label >Gender</label>
+    <input type="radio" name="sex" checked="${customer.sex}" value="true"><span>Male</span>
+    <input type="radio" name="sex" checked="${!customer.sex}" value="false"><span>Female</span>
+    <label for="age">Age</label>
+    <input type="number" min="0" name="age" id="age" value="${customer.age}">
     <input type="submit" value="UPDATE" name="action"/>
 </form>
 </body>

@@ -51,7 +51,7 @@
     <tbody>
         <c:forEach items="${customers}" var="c" varStatus="item">
             <tr>
-                <td>${item.count}</td>
+                <td>${c.id}</td>
                 <td>${c.name}</td>
                 <td>${c.email}</td>
                 <td>${c.address}</td>
